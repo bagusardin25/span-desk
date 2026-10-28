@@ -1,0 +1,128 @@
+[
+  {
+    "id": "exact-money",
+    "claim": "The prize is $12,000.",
+    "snippet": "Winners receive $12,000 in cash.",
+    "status": "numbers_present",
+    "model_may_set_support": true,
+    "claim_numbers": ["12000"],
+    "missing_numbers": []
+  },
+  {
+    "id": "different-money",
+    "claim": "The prize is $12,000.",
+    "snippet": "Winners receive $11,000 in cash.",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["12000"],
+    "missing_numbers": ["12000"]
+  },
+  {
+    "id": "no-figure",
+    "claim": "The page describes the public API.",
+    "snippet": "This reference lists the public API.",
+    "status": "not_applicable",
+    "model_may_set_support": true,
+    "claim_numbers": [],
+    "missing_numbers": []
+  },
+  {
+    "id": "comma-matches-plain-digits",
+    "claim": "The cap is 1,000 requests.",
+    "snippet": "Each account includes 1000 requests.",
+    "status": "numbers_present",
+    "model_may_set_support": true,
+    "claim_numbers": ["1000"],
+    "missing_numbers": []
+  },
+  {
+    "id": "trailing-zero-decimal",
+    "claim": "Support was 34.70 percent.",
+    "snippet": "The measured support rate was 34.7 percent.",
+    "status": "numbers_present",
+    "model_may_set_support": true,
+    "claim_numbers": ["34.7"],
+    "missing_numbers": []
+  },
+  {
+    "id": "thirty-does-not-match-three-hundred",
+    "claim": "About 30 statements were unsupported.",
+    "snippet": "About 300 statements were unsupported.",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["30"],
+    "missing_numbers": ["30"]
+  },
+  {
+    "id": "percent-matches-bare-number",
+    "claim": "Nearly 30% of statements were unsupported.",
+    "snippet": "Doctors reviewed 30 statements from the sample.",
+    "status": "numbers_present",
+    "model_may_set_support": true,
+    "claim_numbers": ["30"],
+    "missing_numbers": []
+  },
+  {
+    "id": "spelled-number-does-not-count",
+    "claim": "The sample included 30 statements.",
+    "snippet": "The sample included thirty statements.",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["30"],
+    "missing_numbers": ["30"]
+  },
+  {
+    "id": "empty-snippet",
+    "claim": "Latency stayed under 20 seconds.",
+    "snippet": "",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["20"],
+    "missing_numbers": ["20"]
+  },
+  {
+    "id": "one-of-two-figures-missing",
+    "claim": "Build runs from 28 October to 20 November 2026.",
+    "snippet": "The window opens on 28 October 2026.",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["28", "20", "2026"],
+    "missing_numbers": ["20"]
+  },
+  {
+    "id": "negative-does-not-match-positive",
+    "claim": "The adjustment was -5 points.",
+    "snippet": "The adjustment was 5 points.",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["-5"],
+    "missing_numbers": ["-5"]
+  },
+  {
+    "id": "unicode-minus",
+    "claim": "The adjustment was −5 points.",
+    "snippet": "The adjustment was -5 points.",
+    "status": "numbers_present",
+    "model_may_set_support": true,
+    "claim_numbers": ["-5"],
+    "missing_numbers": []
+  },
+  {
+    "id": "decimal-is-not-a-prefix",
+    "claim": "The rate was 3.1.",
+    "snippet": "The rate was 3.14.",
+    "status": "unsupported",
+    "model_may_set_support": false,
+    "claim_numbers": ["3.1"],
+    "missing_numbers": ["3.1"]
+  },
+  {
+    "id": "version-letter-hides-digit",
+    "claim": "Use model v2 for the check.",
+    "snippet": "No digit appears in this snippet.",
+    "status": "not_applicable",
+    "model_may_set_support": true,
+    "claim_numbers": [],
+    "missing_numbers": []
+  }
+]
